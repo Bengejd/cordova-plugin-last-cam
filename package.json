@@ -1,0 +1,25 @@
+{
+  "name": "LastCam",
+  "version": "0.0.1",
+  "description": "The last Cordova camera plugin you'll ever download.",
+  "cordova": {
+    "id": "cordova-plugin-last-cam",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+     "cordova",
+    "phonegap",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "ios",
+    "ionic",
+    "camera",
+    "cam",
+    "camera-preview",
+    "preview"
+  ],
+  "author": "Bengejd",
+  "license": "MIT"
+}

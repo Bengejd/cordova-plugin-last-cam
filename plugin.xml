@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-last-cam" version="0.0.1"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>LastCam</name>
+
+    <js-module name="LastCam" src="www/LastCam.js">
+        <clobbers target="LastCam" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+
+        <!--
+        Add in any class declaration names here so that they can be accessed by Cordova. Else the plugin will fail.
+        -->
+
+            <feature name="LastCam">
+                <param name="ios-package" value="LastCam" />
+            </feature>
+
+        </config-file>
+
+        <!-- Add in the plugin .swift files here -->
+        <source-file src="src/ios/LastCam.swift" />
+
+        <!-- Add in the swift-support plugin by default -->
+        <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+    </platform>
+</plugin>
