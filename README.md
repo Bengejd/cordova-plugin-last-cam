@@ -1,19 +1,12 @@
+## TODO's
+- [X] Stream camera preview
+- [X] Allow for stillPhotoCapture
+- [X] Switch Cameras
 
-### TODO's
-- [ ] Stream camera preview
-- [ ] Allow for stillPhotoCapture
 - [ ] Allow for videoCapture
-- [ ] Output FileURI 
-- [ ] Switch Cameras
+- [ ] Output FileURI
+- [ ] Output Base64 data
 - [ ] Switch Flash
 - [ ] Setup startup options
-- [ ]
-- [ ] 
-- [ ]
-- [ ]
-
-### Default Settings
-cameraOptions = {
-	camera: ".Front" // Defaults to ".Back"
-	
-}
+- [ ] Show errors across all methods to catch exceptions.
+#### 

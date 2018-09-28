@@ -4,10 +4,6 @@ var PLUGIN_NAME = "LastCam";
 
 var LastCam = function() {};
 
-function isFunction(obj) {
-	return !!(obj && obj.constructor && obj.call && obj.apply);
-}
-
 LastCam.startCamera = function(options, onSuccess, onError) {
 	options = options || {};
 	options.x = options.x || 0;
@@ -37,6 +33,10 @@ LastCam.startVideoCapture = function(onSuccess, onError) {
 
 LastCam.stopVideoCapture = function(onSuccess, onError) {
 	exec(onSuccess, onError, PLUGIN_NAME, "stopVideoCapture", []);
+};
+
+LastCam.recordingTimer = function(onSuccess, onError) {
+	exec(onSuccess, onError, PLUGIN_NAME, "recordingTimer", []);
 };
 
 
