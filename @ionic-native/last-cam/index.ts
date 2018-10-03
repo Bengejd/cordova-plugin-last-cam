@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cordova, IonicNativePlugin, Plugin } from '@ionic-native/core';
+import { Observable } from 'rxjs/Observable';
 
 /*
  @Name: @ionic-native/LastCam
@@ -7,96 +8,115 @@ import { Cordova, IonicNativePlugin, Plugin } from '@ionic-native/core';
  */
 
 export interface CameraPreviewOptions {
-  /** The left edge in pixels, default 0 */
-  x?: number;
+	/** The left edge in pixels, default 0 */
+	x?: number;
 
-  /** The top edge in pixels, default 0 */
-  y?: number;
+	/** The top edge in pixels, default 0 */
+	y?: number;
 
-  /** The width in pixels, default window.screen.width */
-  width?: number;
+	/** The width in pixels, default window.screen.width */
+	width?: number;
 
-  /** The height in pixels, default window.screen.height */
-  height?: number;
+	/** The height in pixels, default window.screen.height */
+	height?: number;
 
-  /** Choose the camera to use 'front' or 'rear', default 'front' */
-  camera?: string;
+	/** Choose the camera to use 'front' or 'back', default 'front' */
+	camera?: string;
 
-  /** Preview box to the back of the webview (true => back, false => front) , default false */
-  toBack?: boolean;
 }
 
 @Plugin({
-  pluginName: 'LastCam',
-  plugin: 'cordova-plugin-last-cam',
-  pluginRef: 'LastCam',
-  repo:
-    'https://github.com/bengejd/cordova-plugin-last-cam',
-  platforms: ['iOS']
+	pluginName: 'LastCam',
+	plugin: 'cordova-plugin-last-cam',
+	pluginRef: 'LastCam',
+	repo:
+		'https://github.com/bengejd/cordova-plugin-last-cam',
+	platforms: ['iOS']
 })
 @Injectable()
 export class LastCam extends IonicNativePlugin {
-  /**
-   * Starts the camera preview instance.
-   * @param {CameraPreviewOptions} options
-   * @return {Promise<any>}
-   */
-  @Cordova({
-    successIndex: 1,
-    errorIndex: 2
-  })
-  startCamera(options: CameraPreviewOptions): Promise<any> {
-    return;
-  }
+	/**
+	 * Starts the camera preview instance.
+	 * @param {CameraPreviewOptions} options
+	 * @return {Promise<any>}
+	 */
+	@Cordova({
+		successIndex: 1,
+		errorIndex: 2
+	})
+	startCamera(options: CameraPreviewOptions): Promise<any> {
+		return;
+	}
 
-  /**
-   * Stops the camera preview instance. (iOS)
-   * @return {Promise<any>}
-   */
-  @Cordova()
-  stopCamera(): Promise<any> {
-    return;
-  }
+	/**
+	 * Stops the camera preview instance. (iOS)
+	 * @return {Promise<any>}
+	 */
+	@Cordova()
+	stopCamera(): Promise<any> {
+		return;
+	}
 
-  /**
-   * Switch from the rear camera and front camera, if available.
-   * @return {Promise<any>}
-   */
-  @Cordova()
-  switchCamera(): Promise<any> {
-    return;
-  }
+	/**
+	 * Switch from the rear camera and front camera, if available.
+	 * @return {Promise<any>}
+	 */
+	@Cordova()
+	switchCamera(): Promise<any> {
+		return;
+	}
 
-  /**
-   * Take the picture (base64)
-   * @return {Promise<any>}
-   */
-  @Cordova({
-    successIndex: 0,
-    errorIndex: 1
-  })
-  takePicture(): Promise<any> {
-    return;
-  }
+	/**
+	 * Switch the flash mode.
+	 * @return {Promise<any>}
+	 */
+	@Cordova()
+	switchFlash(): Promise<any> {
+		return;
+	}
 
-  /**
-   * Start the video capture
-   * @return {Promise<any>}
-   */
-  @Cordova()
-  startVideoCapture(): Promise<any> {
-    return;
-  }
+	/**
+	 * Take the picture (base64)
+	 * @return {Promise<any>}
+	 */
+	@Cordova({
+		successIndex: 0,
+		errorIndex: 1
+	})
+	takePicture(): Promise<any> {
+		return;
+	}
 
-  /**
-   * Stops the video capture
-   * @return {Promise<any>}
-   */
-  @Cordova({
-    successIndex: 1,
-    errorIndex: 2
-  })
-  stopVideoCapture(): Promise<any> {
-    return;
-  }
+	/**
+	 * Start the video capture
+	 * @return {Promise<any>}
+	 */
+	@Cordova()
+	startVideoCapture(): Promise<any> {
+		return;
+	}
+
+	/**
+	 * Stops the video capture
+	 * @return {Promise<any>}
+	 */
+	@Cordova({
+		successIndex: 0,
+		errorIndex: 1
+	})
+	stopVideoCapture(): Promise<any> {
+		return;
+	}
+
+	/**
+	 * Promise of the recordingTimer.
+	 * @return {Promise<any>}
+	 */
+	@Cordova({
+		successIndex : 0,
+		errorIndex : 1,
+	})
+	recordingTimer(): Promise<any> {
+		return;
+	}
 }

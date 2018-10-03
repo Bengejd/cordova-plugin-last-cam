@@ -91,7 +91,7 @@ var cameraStarted: Bool = false;
     }
 
     @objc(switchCamera:)
-    func switchCamera(command: CDVInvokedUrlCommand!) {
+    func switchCamera(command: CDVInvokedUrlCommand) {
         var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: "Camera session isn't started");
 
         if(!cameraStarted) {
@@ -103,6 +103,20 @@ var cameraStarted: Bool = false;
             cameraManager.cameraDevice = cameraDevice == CameraDevice.front ? CameraDevice.back : CameraDevice.front
 
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: cameraView);
+            self.commandDelegate!.send(pluginResult, callbackId: command.callbackId);
+        }
+    }
+
+    @objc(switchFlash:)
+    func switchFlash(command: CDVInvokedUrlCommand) {
+        var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: "Camera session isn't started");
+        if(!cameraStarted) {
+            self.commandDelegate!.send(pluginResult, callbackId: command.callbackId);
+        } else {
+            cameraManager.changeFlashMode();
+            let flashMode = cameraManager.flashMode;
+
+            pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: flashMode.rawValue);
             self.commandDelegate!.send(pluginResult, callbackId: command.callbackId);
         }
     }

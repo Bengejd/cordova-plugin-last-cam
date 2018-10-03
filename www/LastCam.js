@@ -39,5 +39,9 @@ LastCam.recordingTimer = function(onSuccess, onError) {
 	exec(onSuccess, onError, PLUGIN_NAME, "recordingTimer", []);
 };
 
+LastCam.switchFlash = function(onSuccess, onError) {
+	exec(onSuccess, onError, PLUGIN_NAME, "switchFlash", []);
+};
+
 
 module.exports = LastCam;

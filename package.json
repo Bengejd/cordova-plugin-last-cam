@@ -2,6 +2,10 @@
   "name": "LastCam",
   "version": "0.0.1",
   "description": "The last Cordova camera plugin you'll ever download.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bengejd/cordova-plugin-last-cam"
+  },
   "cordova": {
     "id": "cordova-plugin-last-cam",
     "platforms": [
