@@ -5,6 +5,7 @@ within a custom Camera view.
 
 ![LastCam](assets/last-cam-logo.png)
 
+
 ## Table of Contents
 - [Install](#install)
 - [Required Setup](#required-setup)
