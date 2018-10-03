@@ -5,20 +5,23 @@ within a custom Camera view.
 
 ![LastCam](assets/last-cam-logo.png)
 
-
 ## Table of Contents
+- [Features](#features)
 - [Install](#install)
-- [Required Setup](#required-setup)
-    - [import](#import)
-- [Methods](#methods)
-    - [Start Camera](###start-camera)
-    - [Stop Camera](#stop-camera)
-- [Badge](#badge)
-- [Example Readmes](#example-readmes)
-- [Related Efforts](#related-efforts)
-- [Maintainers](#maintainers)
-- [Contribute](#contribute)
+- [IOS Quirks](#ios-quirks)
+- [Usage](#usage)
+    - [Start Camera](#startcameraoptions-successcallback-errorcallback)
+    - [Stop Camera](#stopcamerasuccesscallback-errorcallback)
+    - [Switch Camera](#switchcamerasuccesscallback-errorcallback)
+    - [Switch Flash](#switchflashsuccesscallback-errorcallback)
+    - [Take Picture](#takepicturesuccesscallback-errorcallback)
+    - [Start Video Recording](#)
+    - [Stop Video Recording](#)
+    - [Recording Timer](#)
+- [Example App](#example-app)
+- [Alternatives](#alternatives)
 - [License](#license)
+- [Credits](#credits)
 
 # Cordova Plugin Last Cam
 <a href="https://badge.fury.io/js/cordova-plugin-camera-preview" target="_blank"><img height="21" style='border:0px;height:21px;' border='0' src="https://badge.fury.io/js/cordova-plugin-camera-preview.svg" alt="NPM Version"></a>
@@ -39,7 +42,7 @@ Cordova plugin that allows camera interaction from Javascript and HTML
   <li>Set a custom size for the preview box.</li>
 </ul>
 
-# Installation
+# Install
 
 Use any one of the installation methods listed below depending on which framework you use.
 
@@ -158,7 +161,21 @@ CameraPreview.switchCamera()
 });
 ```
 
+#### switchFlash([successCallback, errorCallback])
 
+Switches the flash mode between `0 (off)`, `1 (on)` and `2(auto)`.
+
+Returns an int containing the flash mode: `0, 1, or 2`
+
+```javascript
+CameraPreview.switchFlash()
+.then(mode => {
+    console.log('New flash mode: ', mode)
+})
+.catch(err => { 
+    console.log(err);
+});
+```
 
 ### takePicture([successCallback, errorCallback])
 
@@ -200,27 +217,78 @@ constructor(private DomSanitizer: DomSanitizer){
 }
 ```
 
-HTML
-
+In your `component.html` file
 ```html
 <img [src]="DomSanitizer.bypassSecurityTrustResourceUrl(imageSrcData)">
 ```
 
-#### switchFlash([successCallback, errorCallback])
+#### startVideoCapture([successCallback, errorCallback])
 
-Switches the flash mode between `0 (off)`, `1 (on)` and `2(auto)`.
-
-Returns an int containing the flash mode: `0, 1, or 2`
+Starts the video recording session. You will see a brief flicker. This is not a bug.
 
 ```javascript
-CameraPreview.switchFlash()
-.then(mode => {
-    console.log('New flash mode: ', mode)
+CameraPreview.startVideoCapture().then(() => {
+    console.log('Video Capture started');
 })
 .catch(err => { 
     console.log(err);
 });
 ```
+
+#### stopVideoCapture([successCallback, errorCallback])
+
+Stops the video recording session. You will see a brief flicker. This is not a bug.
+
+Example fileURI that is returned: `/var/mobile/Containers/Data/Application/.../filename.mp4`
+
+```javascript
+CameraPreview.startVideoCapture().then(fileURI => {
+	  /*
+        fileURI is a local path to the video recording on the user's device.
+        Its up to the you to figure out the best way display and upload the video source.
+      */
+})
+.catch(err => { 
+    console.log(err);
+});
+```
+
+#### recordingTimer([successCallback, errorCallback])
+
+This returns the current recording time, while actively recording.
+
+```javascript
+CameraPreview.recordingTimer().then(time => {
+	console.log('Recording length: ', time);
+})
+.catch(err => { 
+    console.log(err);
+});
+```
+
+# License
+
+MIT License
+
+Copyright (c) 2018 Jordan Benge
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 # Credits
 
