@@ -271,8 +271,7 @@ CameraPreview.recordingTimer().then(time => {
 [cordova-plugin-camera-preview](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview) - 
 Custom Preview, but does not allow video capture & has high processing usage.
 
-[cordova-background-video](https://github.com/Neos21/cordova-background-video) - Custom preview, only allows video  
-capture.
+[cordova-background-video](https://github.com/Neos21/cordova-background-video) - Custom preview, only allows video  capture.
 
 [cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera) - Native camera interface. Allows for Video 
 & Photo capture. Limited customization.
@@ -281,7 +280,7 @@ capture.
 maintained. Limited customizations. 
 
 [cordova-plugin-media-capture](https://github.com/apache/cordova-plugin-media-capture) - Last time I checked, this 
-had some processing & bugs that hadn't been addressed.
+had some processing issues & bugs that had not been addressed.
 
 ## License
 
