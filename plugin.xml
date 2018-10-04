@@ -23,6 +23,9 @@
 
         <!-- Add in the plugin .swift files here -->
         <source-file src="src/ios/LastCam.swift" />
+        <source-file src="src/libs/CameraManager.framework" target-dir="lib" framework="true" />
+        <framework src="src/libs/CameraManager.framework" embed="true" custom="true" />
+
 
         <!-- Add in the swift-support plugin by default -->
         <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>

@@ -5,24 +5,6 @@ within a custom Camera view.
 
 ![LastCam](assets/last-cam-logo.png)
 
-## Table of Contents
-- [Features](#features)
-- [Install](#install)
-- [IOS Quirks](#ios-quirks)
-- [Usage](#usage)
-    - [Start Camera](#startcameraoptions-successcallback-errorcallback)
-    - [Stop Camera](#stopcamerasuccesscallback-errorcallback)
-    - [Switch Camera](#switchcamerasuccesscallback-errorcallback)
-    - [Switch Flash](#switchflashsuccesscallback-errorcallback)
-    - [Take Picture](#takepicturesuccesscallback-errorcallback)
-    - [Start Video Recording](#)
-    - [Stop Video Recording](#)
-    - [Recording Timer](#)
-- [Example App](#example-app)
-- [Alternatives](#alternatives)
-- [License](#license)
-- [Credits](#credits)
-
 # Cordova Plugin Last Cam
 <a href="https://badge.fury.io/js/cordova-plugin-camera-preview" target="_blank"><img height="21" style='border:0px;height:21px;' border='0' src="https://badge.fury.io/js/cordova-plugin-camera-preview.svg" alt="NPM Version"></a>
 <a href='https://www.npmjs.org/package/cordova-plugin-camera-preview' target='_blank'><img height='21' style='border:0px;height:21px;' src='https://img.shields.io/npm/dt/cordova-plugin-camera-preview.svg?label=NPM+Downloads' border='0' alt='NPM Downloads' /></a>
@@ -33,7 +15,24 @@ Cordova plugin that allows camera interaction from Javascript and HTML
 
 **PR's are greatly appreciated. Maintainer(s) wanted.**
 
-# Features
+## Table of Contents
+- [Features](#features)
+- [Install](#install)
+- [IOS Quirks](#ios-quirks)
+- [Usage](#usage)
+    - [Start Camera](#startcameraoptions-successcallback-errorcallback)
+    - [Stop Camera](#stopcamerasuccesscallback-errorcallback)
+    - [Switch Camera](#switchcamerasuccesscallback-errorcallback)
+    - [Switch Flash](#switchflashsuccesscallback-errorcallback)
+    - [Take Picture](#takepicturesuccesscallback-errorcallback)
+    - [Start Video Recording](#startvideocapturesuccesscallback-errorcallback)
+    - [Stop Video Recording](#stopvideocapturesuccesscallback-errorcallback)
+    - [Recording Timer](#recordingtimersuccesscallback-errorcallback)
+- [Alternative Plugins](#alternative-plugins)
+- [License](#license)
+- [Credits](#credits)
+
+## Features
 
 <ul>
   <li>Start a camera preview from HTML code.</li>
@@ -42,7 +41,7 @@ Cordova plugin that allows camera interaction from Javascript and HTML
   <li>Set a custom size for the preview box.</li>
 </ul>
 
-# Install
+## Install
 
 Use any one of the installation methods listed below depending on which framework you use.
 
@@ -106,7 +105,7 @@ html, body, .ion-app, .ion-content {
 ```
 
 
-# Usage
+## Usage
 
 #### startCamera(options, [successCallback, errorCallback])
 
@@ -177,7 +176,7 @@ CameraPreview.switchFlash()
 });
 ```
 
-### takePicture([successCallback, errorCallback])
+#### takePicture([successCallback, errorCallback])
 
 <info>Takes a picture</info>
 
@@ -266,7 +265,24 @@ CameraPreview.recordingTimer().then(time => {
 });
 ```
 
-# License
+## Alternative Plugins
+
+[cordova-plugin-camera-preview](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview) - 
+Custom Preview, but does not allow video capture & has high processing usage.
+
+[cordova-background-video](https://github.com/Neos21/cordova-background-video) - Custom preview, only allows video  
+capture.
+
+[cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera) - Native camera interface. Allows for Video 
+& Photo capture. Limited customization.
+
+[cordova-plugin-video-capture-plus](https://github.com/danielsogl/cordova-plugin-video-capture-plus) - No longer 
+maintained. Limited customizations. 
+
+[cordova-plugin-media-capture](https://github.com/apache/cordova-plugin-media-capture) - Last time I checked, this 
+had some processing & bugs that hadn't been addressed.
+
+## License
 
 MIT License
 
@@ -290,8 +306,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# Credits
+## Credits
 
-Created by Jordan Benge [@bengejd](https://github.com/bengejd)
+LastCam was Created by Jordan Benge [@bengejd](https://github.com/bengejd)
+
+CameraManager, which LastCam utilizes was created by 
+imaginary-cloud [@imaginary-cloud](https://github.com/imaginary-cloud/CameraManager)
 
 

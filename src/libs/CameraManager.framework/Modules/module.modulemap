@@ -1,0 +1,11 @@
+framework module CameraManager {
+  umbrella header "CameraManager.h"
+
+  export *
+  module * { export * }
+}
+
+module CameraManager.Swift {
+    header "CameraManager-Swift.h"
+    requires objc
+}
