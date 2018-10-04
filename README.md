@@ -7,6 +7,10 @@ within a custom Camera view.
 
 # Cordova Plugin Last Cam
 
+[![GitHub](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/Bengejd/cordova-plugin-last-cam)
+![GitHub issues](https://img.shields.io/github/issues-raw/bengejd/cordova-plugin-last-cam/.svg)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Bengejd/cordova-plugin-last-cam)
+
 **Releases are being kept up to date when appropriate. However, this plugin is under constant development. As such it is recommended to use master to always have the latest fixes & features.**
 
 **PR's are greatly appreciated. Maintainer(s) wanted.**
