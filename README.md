@@ -105,6 +105,12 @@ html, body, .ion-app, .ion-content {
 }
 ```
 
+#### Note
+
+LastCam will build and link the underlying framework on it's own, but it will display a few errors within your XCode 
+project on run-time. This is purely a cosmetic error, and will not affect the functioning of the plugin. I am working
+ on a solution for this in the meantime, but do not worry. The plugin will compile and run without issue. 
+
 
 ## Usage
 

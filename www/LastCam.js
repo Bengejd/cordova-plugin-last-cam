@@ -23,6 +23,10 @@ LastCam.switchCamera = function(onSuccess, onError) {
 	exec(onSuccess, onError, PLUGIN_NAME, "switchCamera", []);
 };
 
+LastCam.switchFlash = function(onSuccess, onError) {
+	exec(onSuccess, onError, PLUGIN_NAME, "switchFlash", []);
+};
+
 LastCam.takePicture = function(onSuccess, onError) {
 	exec(onSuccess, onError, PLUGIN_NAME, "takePicture", []);
 };
@@ -39,9 +43,10 @@ LastCam.recordingTimer = function(onSuccess, onError) {
 	exec(onSuccess, onError, PLUGIN_NAME, "recordingTimer", []);
 };
 
-LastCam.switchFlash = function(onSuccess, onError) {
-	exec(onSuccess, onError, PLUGIN_NAME, "switchFlash", []);
+LastCam.watchRecordingTimer = function(onSuccess, onError) {
+	exec(onSuccess, onError, PLUGIN_NAME, "watchRecordingTimer", []);
 };
+
 
 
 module.exports = LastCam;
